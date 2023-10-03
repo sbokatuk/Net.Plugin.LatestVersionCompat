@@ -1,9 +1,6 @@
-﻿using System;
-using System.Json;
-using System.Net.Http;
-using System.Threading.Tasks;
-using Foundation;
+﻿using Foundation;
 using Plugin.LatestVersion.Abstractions;
+using System.Json;
 
 namespace Plugin.LatestVersion
 {

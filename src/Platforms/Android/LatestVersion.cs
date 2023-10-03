@@ -1,16 +1,10 @@
-﻿using System;
-using System.Net.Http;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using Android.App;
+﻿using Android.App;
 using Android.Content;
-using Android.Content.PM;
 using Android.Runtime;
-using Net = Android.Net;
-using Plugin.LatestVersion.Abstractions;
 using HtmlAgilityPack;
-using System.Linq;
-using Jurassic.Library;
+using Plugin.LatestVersion.Abstractions;
+using Application = Android.App.Application;
+using Net = Android.Net;
 
 namespace Plugin.LatestVersion
 {
