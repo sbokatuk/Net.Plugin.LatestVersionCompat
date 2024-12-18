@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <UseMaui>true</UseMaui>
-    <TargetFrameworks>net6.0-android;net6.0-ios</TargetFrameworks>
+    <TargetFrameworks>net8.0;net8.0-android;net8.0-ios</TargetFrameworks>
     <OutputType>Library</OutputType>
     <ImplicitUsings>enable</ImplicitUsings>
     <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
@@ -12,22 +12,23 @@
     <SingleProject>true</SingleProject>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
     
-    <Version>6.0.0-pre</Version>
-    <RootNamespace>Plugin.LatestVersionCompat</RootNamespace>
-    <AssemblyName>Plugin.LatestVersionCompat</AssemblyName>
+    <Version>8.0.2</Version>
+    <RootNamespace>Plugin.LatestVersion</RootNamespace>
+    <AssemblyName>Plugin.LatestVersion</AssemblyName>
     <AssemblyVersion>0.1.0.0</AssemblyVersion>
     <AssemblyFileVersion>0.1.0.0</AssemblyFileVersion>
 
     <!-- NuGet package info -->
-    <PackageId>Plugin.LatestVersionCompat</PackageId>
+    <PackageId>Net.Plugin.LatestVersion</PackageId>
     <Title>LatestVersion Plugin for Xamarin and Windows</Title>
-    <PackageVersion>6.0.0-pre</PackageVersion>
-    <Authors>Felipe Baltazar</Authors>
-    <Owners>Felipe Baltazar</Owners>
-    <PackageLicenseUrl>https://github.com/felipebaltazar/Maui.Plugin.LatestVersionCompat/blob/master/LICENSE</PackageLicenseUrl>
-    <PackageProjectUrl>https://github.com/felipebaltazar/Maui.Plugin.LatestVersionCompat</PackageProjectUrl>
-    <RepositoryUrl>https://github.com/felipebaltazar/Maui.Plugin.LatestVersionCompat</RepositoryUrl>
-    <PackageIconUrl>https://github.com/felipebaltazar/Maui.Plugin.LatestVersionCompat/master/art/icon.png</PackageIconUrl>
+    <PackageVersion>8.0.2</PackageVersion>
+    <Authors>s.bokatuk</Authors>
+    <Owners>s.bokatuk</Owners>
+    <PackageLicenseFile>LICENSE.txt</PackageLicenseFile>
+    <PackageProjectUrl>https://github.com/sbokatuk/Net.Plugin.LatestVersionCompat</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/sbokatuk/Net.Plugin.LatestVersionCompat</RepositoryUrl>
+    <PackageIconFile>icon.png</PackageIconFile>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
     <DefineConstants>$(DefineConstants);</DefineConstants>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
@@ -51,6 +52,12 @@
   <ItemGroup Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">
     <PackageReference Include="HtmlAgilityPack" Version="1.11.43" />
     <PackageReference Include="Jurassic" Version="3.2.6" />
+  </ItemGroup>
+
+  <ItemGroup>
+	<None Include="../LICENSE.txt" Pack="true" PackagePath="$(PackageLicenseFile)"/>
+	<None Include="../art/icon.png" Pack="true" PackagePath="$(PackageIconFile)"/>
+	<None Include="../README.md" Pack="true" PackagePath="$(PackageReadmeFile)"/>
   </ItemGroup>
 
   <ItemGroup>
